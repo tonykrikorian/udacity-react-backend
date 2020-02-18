@@ -29,7 +29,7 @@ namespace udacity_react_backend.Controllers
 
         [HttpPost]
         [Route("addItem")]
-        public IActionResult AddItems() 
+        public IActionResult AddItems(Item item) 
         {
             return Ok();
         }
