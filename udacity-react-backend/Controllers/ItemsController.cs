@@ -24,14 +24,17 @@ namespace udacity_react_backend.Controllers
         public IActionResult GetItems() 
         {
             var items = _context.Items.ToList();
-            return Ok();
+            return Ok(items);
         }
 
         [HttpPost]
         [Route("addItem")]
         public IActionResult AddItems(Item item) 
         {
-            return Ok();
+          _context.Items.Add(item);
+            _context.SaveChanges();
+
+            return Ok(item);
         }
     }
 }
